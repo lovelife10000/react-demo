@@ -11,29 +11,37 @@ class App extends Component {
     }
 
     componentWillMount() {
-        console.log('[App]componentWillMount')
+        console.log('[App]componentWillMount');
+        [1,2,3,4].map(()=>{
+            console.log(this)
+            debugger
+            this.setState({
+                abc:this.state.abc++
+            });
+        })
+
+        console.log(this.state.abc)
+        debugger
     }
 
     UNSAFE_componentWillMount() {
         console.log('[App]UNSAFE_componentWillMount')
     }
 
-    // static getDerivedStateFromProps(props, state) {
-    //     console.log('getDerivedStateFromProps')
-    //
-    // }
+
 
     componentDidMount() {
         console.log('[App]componentDidMount')
-
+        console.log(this.state.abc)
+        debugger
     }
 
-    componentWillReceiveProps(nextProps,b) {
+    componentWillReceiveProps(nextProps) {
         console.log('[App]componentWillReceiveProps')
         debugger
     }
 
-    UNSAFE_componentWillReceiveProps(nextProps,b) {
+    UNSAFE_componentWillReceiveProps(nextProps) {
         console.log('[App]UNSAFE_componentWillReceiveProps')
         debugger
     }
@@ -54,9 +62,7 @@ class App extends Component {
     }
 
 
-    // getSnapshotBeforeUpdate(prevProps, prevState) {
-    //     console.log('getSnapshotBeforeUpdate')
-    // }
+
 
     componentDidUpdate(prevProps, prevState, snapshot) {
         console.log('[App]componentDidUpdate')
@@ -78,6 +84,8 @@ class App extends Component {
 
     render() {
         console.log('[App]render')
+        console.log(this.state.abc)
+        debugger
         return (
             <div onClick={this.changeAbc.bind(this)}>
                 <Child y={this.state.abc}/>

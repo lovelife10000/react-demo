@@ -17,10 +17,7 @@ class Child extends Component {
         console.log('[Child]UNSAFE_componentWillMount')
     }
 
-    // static getDerivedStateFromProps(props, state) {
-    //     console.log('getDerivedStateFromProps')
-    //
-    // }
+
 
     componentDidMount() {
         console.log('[Child]componentDidMount')
@@ -57,10 +54,6 @@ class Child extends Component {
 
 
 
-
-    // getSnapshotBeforeUpdate(prevProps, prevState) {
-    //     console.log('getSnapshotBeforeUpdate')
-    // }
 
     componentDidUpdate(prevProps, prevState, snapshot) {
         console.log('[Child]componentDidUpdate')
